@@ -11,6 +11,12 @@ file(GLOB EX2_SRC aufgabe2/*.cpp)
     
 file(GLOB EX2B_INC aufgabe2b/*.hpp)
 file(GLOB EX2B_SRC aufgabe2b/*.cpp)
+    
+file(GLOB EX3AB_INC aufgabe3ab/*.hpp)
+file(GLOB EX3AB_SRC aufgabe3ab/*.cpp)
+
+file(GLOB EX3C_INC aufgabe3c/*.hpp)
+file(GLOB EX3C_SRC aufgabe3c/*.cpp)
 
 file(GLOB EX_INC *.hpp)
     
@@ -27,3 +33,9 @@ target_include_directories(ex2 PUBLIC ${EX_INCLUDE_DIR})
 
 add_executable(ex2b ${EX2B_INC} ${EX_INC} ${EX2B_SRC})
 target_include_directories(ex2b PUBLIC ${EX_INCLUDE_DIR})
+
+add_executable(ex3ab ${EX3AB_INC} ${EX_INC} ${EX3AB_SRC})
+target_include_directories(ex3ab PUBLIC ${EX_INCLUDE_DIR})
+
+add_executable(ex3c ${EX3C_INC} ${EX_INC} ${EX3C_SRC})
+target_include_directories(ex3c PUBLIC ${EX_INCLUDE_DIR})

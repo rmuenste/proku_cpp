@@ -42,7 +42,7 @@ namespace ex {
             std::cout << a << " % " << b << " = " << (a % b) << std::endl;
             break;
         default:
-            std::cout << "Error: unknown operator." << std::endl;
+            std::cout << "Error: unknown operator: '" << op << "'." << std::endl;
             break;
         }
 
