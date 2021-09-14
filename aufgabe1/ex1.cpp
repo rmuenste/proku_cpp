@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <ex_assert.hpp>
 #include <cmath>
+#include <string>
 
 namespace ex {
 
