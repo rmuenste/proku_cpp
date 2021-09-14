@@ -8,6 +8,9 @@ file(GLOB EX1_SRC aufgabe1/*.cpp)
 
 file(GLOB EX2_INC aufgabe2/*.hpp)
 file(GLOB EX2_SRC aufgabe2/*.cpp)
+    
+file(GLOB EX2B_INC aufgabe2b/*.hpp)
+file(GLOB EX2B_SRC aufgabe2b/*.cpp)
 
 file(GLOB EX_INC *.hpp)
     
@@ -21,3 +24,6 @@ target_include_directories(ex1 PUBLIC ${EX_INCLUDE_DIR})
 
 add_executable(ex2 ${EX2_INC} ${EX_INC} ${EX2_SRC})
 target_include_directories(ex2 PUBLIC ${EX_INCLUDE_DIR})
+
+add_executable(ex2b ${EX2B_INC} ${EX_INC} ${EX2B_SRC})
+target_include_directories(ex2b PUBLIC ${EX_INCLUDE_DIR})
