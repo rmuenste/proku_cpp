@@ -18,6 +18,9 @@ file(GLOB EX3AB_SRC aufgabe3ab/*.cpp)
 file(GLOB EX3C_INC aufgabe3c/*.hpp)
 file(GLOB EX3C_SRC aufgabe3c/*.cpp)
 
+file(GLOB EX4_INC aufgabe4/*.hpp)
+file(GLOB EX4_SRC aufgabe4/*.cpp)
+
 file(GLOB EX_INC *.hpp)
     
 set(EX_INCLUDE_DIR 
@@ -39,3 +42,6 @@ target_include_directories(ex3ab PUBLIC ${EX_INCLUDE_DIR})
 
 add_executable(ex3c ${EX3C_INC} ${EX_INC} ${EX3C_SRC} aufgabe3ab/ggt.cpp)
 target_include_directories(ex3c PUBLIC ${EX_INCLUDE_DIR})
+
+add_executable(ex4 ${EX4_INC} ${EX_INC} ${EX4_SRC})
+target_include_directories(ex4 PUBLIC ${EX_INCLUDE_DIR})
