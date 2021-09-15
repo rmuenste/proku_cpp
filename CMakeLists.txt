@@ -37,5 +37,5 @@ target_include_directories(ex2b PUBLIC ${EX_INCLUDE_DIR})
 add_executable(ex3ab ${EX3AB_INC} ${EX_INC} ${EX3AB_SRC})
 target_include_directories(ex3ab PUBLIC ${EX_INCLUDE_DIR})
 
-add_executable(ex3c ${EX3C_INC} ${EX_INC} ${EX3C_SRC})
+add_executable(ex3c ${EX3C_INC} ${EX_INC} ${EX3C_SRC} aufgabe3ab/ggt.cpp)
 target_include_directories(ex3c PUBLIC ${EX_INCLUDE_DIR})
