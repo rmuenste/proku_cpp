@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <cmath>
 #include <cassert>
+#include <math.h>
 
 // Teilaufgabe b)
 double norm(const unsigned int n, const double v[])
@@ -37,11 +38,11 @@ int main()
   constexpr unsigned int n = 31;
 
   // pi = 3.14159...
-  constexpr double pi = 4.0 * std::atan(1.0);
+  constexpr double pi = M_PI;
   std::cout << "pi = " << pi << std::endl;
 
   // lambda = 2 * (1 - cos(pi/(n+1)))
-  constexpr double lambda = 2.0 * (1.0 - std::cos(pi/double(n+1)));
+  const double lambda = 2.0 * (1.0 - std::cos(M_PI/double(n+1)));
   std::cout << "lambda = " << lambda << std::endl;
 
   // Vektoren x, u, b, d

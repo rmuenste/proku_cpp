@@ -44,4 +44,35 @@ add_executable(ex3c ${EX3C_INC} ${EX_INC} ${EX3C_SRC} aufgabe3ab/ggt.cpp)
 target_include_directories(ex3c PUBLIC ${EX_INCLUDE_DIR})
 
 add_executable(ex4 ${EX4_INC} ${EX_INC} ${EX4_SRC})
+target_compile_definitions(ex4 PUBLIC _USE_MATH_DEFINES)
 target_include_directories(ex4 PUBLIC ${EX_INCLUDE_DIR})
+
+
+add_executable(ptr1  ${EX_INC} aufgabe5a/ptr1.cpp)
+target_include_directories(ptr1 PUBLIC ${EX_INCLUDE_DIR})
+
+add_executable(ptr2  ${EX_INC} aufgabe5a/ptr2.cpp)
+target_include_directories(ptr2 PUBLIC ${EX_INCLUDE_DIR})
+
+add_executable(ptr3  ${EX_INC} aufgabe5a/ptr3.cpp)
+target_include_directories(ptr3 PUBLIC ${EX_INCLUDE_DIR})
+
+add_executable(ptr4  ${EX_INC} aufgabe5a/ptr4.cpp)
+target_include_directories(ptr4 PUBLIC ${EX_INCLUDE_DIR})
+
+add_executable(ptr5  ${EX_INC} aufgabe5a/ptr5.cpp)
+target_include_directories(ptr5 PUBLIC ${EX_INCLUDE_DIR})
+
+add_executable(ptr6  ${EX_INC} aufgabe5a/ptr6.cpp)
+target_include_directories(ptr6 PUBLIC ${EX_INCLUDE_DIR})
+
+
+add_executable(ex5b ${EX_INC} aufgabe5b/ex5b.cpp)
+target_include_directories(ex5b PUBLIC ${EX_INCLUDE_DIR})
+
+add_executable(ex5c ${EX_INC} aufgabe5c/ex5c.cpp)
+target_include_directories(ex5b PUBLIC ${EX_INCLUDE_DIR})
+
+add_executable(ex5d ${EX_INC} aufgabe5d/ex5d.cpp)
+target_include_directories(ex5d PUBLIC ${EX_INCLUDE_DIR})
+
