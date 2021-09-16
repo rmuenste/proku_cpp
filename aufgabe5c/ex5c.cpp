@@ -39,9 +39,12 @@ int main()
 
   func_1(&x, &z); // func_1 auf 'x' und 'z' anwenden
   func_1(&y, &z); // func_1 auf 'y' und 'z' anwenden
+  // z = 2, y = 5
 
   int* p1 = func_2(&x, &y); // func_2 auf 'x' und 'y' anwenden
+  // p1 = &y
   int* p2 = func_2(&y, &z); // func_2 auf 'y' und 'z' anwenden
+  // p2 = &z
 
   int a = func_3(p1, &y); // func_3 auf 'p1' und 'y' anwenden
   int b = func_3(p2, &x); // func_3 auf 'p2' und 'x' anwenden
