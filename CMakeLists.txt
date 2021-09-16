@@ -3,6 +3,9 @@ CMAKE_POLICY(SET CMP0054 NEW)
 CMAKE_POLICY(SET CMP0074 NEW)
 PROJECT(PROKU-CPP)
 
+set(JPEG_LIBRARY_INCLUDE_DIR "" CACHE PATH "bla")
+set(JPEG_LIBRARY_LIBS "" CACHE FILEPATH "bla")
+
 file(GLOB EX1_INC aufgabe1/*.hpp)
 file(GLOB EX1_SRC aufgabe1/*.cpp)
 
@@ -20,6 +23,9 @@ file(GLOB EX3C_SRC aufgabe3c/*.cpp)
 
 file(GLOB EX4_INC aufgabe4/*.hpp)
 file(GLOB EX4_SRC aufgabe4/*.cpp)
+
+file(GLOB EX6_INC aufgabe6/*.hpp)
+file(GLOB EX6_SRC aufgabe6/*.cpp)
 
 file(GLOB EX_INC *.hpp)
     
@@ -75,4 +81,8 @@ target_include_directories(ex5b PUBLIC ${EX_INCLUDE_DIR})
 
 add_executable(ex5d ${EX_INC} aufgabe5d/ex5d.cpp)
 target_include_directories(ex5d PUBLIC ${EX_INCLUDE_DIR})
+
+add_executable(ex6 ${EX_INC} ${EX6_INC} ${EX6_SRC})
+target_include_directories(ex6 PUBLIC ${EX_INCLUDE_DIR} ${JPEG_LIBRARY_INCLUDE_DIR})
+target_link_libraries(ex6 ${JPEG_LIBRARY_LIBS})
 
