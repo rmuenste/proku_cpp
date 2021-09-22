@@ -19,6 +19,8 @@ std::deque<std::string> split(const std::string& str)
 {
 
   // TODO: implementier mich!
+  std::deque<std::string> words;
+  return words;
 
 }
 
