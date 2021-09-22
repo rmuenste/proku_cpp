@@ -162,14 +162,12 @@ public:
           std::cout << "Einfuege Pos gefunden: " << iter->value << " <= " << val << " < " << iter->next->value << std::endl;
       iter = iter->next;
     }
-    
 
     if(counter > 0) 
       std::cout << "Wert " << val << " wurde " << counter << " mal gefunden." << std::endl;
   } 
 
   void insert(int val) {
-
 
     if (head == nullptr) {
       std::cout << "Einfuege Pos gefunden: empty new Head" << std::endl;
@@ -311,6 +309,19 @@ int main(int argc, char* argv[])
 //  // Haenge die Elemente in die Liste ein:
 //  list.head = &elem_4;
   // <<<<<<<<<< TESTWEISE <<<<<<<<<<
+  //
+  for (int i(1); i < argc; ++i) {
+
+    int value(0);
+    if(!parse_int(argv[i], value)) {
+
+      std::cout << "ungueltige Eingabe" << std::endl;
+      return 1;
+    }
+    list.insert(value);
+
+  }
+  list.print();
 
   // Endlos-Eingabe-Schleife:
   bool quit(false);
