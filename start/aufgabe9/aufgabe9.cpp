@@ -23,7 +23,9 @@ int main(int argc, char* argv[])
 
   // versuche, das Bild einzulesen
   std::cout << "Lese Datei '" << argv[1] << "'..." << std::endl;
-  const Image image(argv[1]);
+  Image image(argv[1]);
+  std::cout << "Schreibe Datei '" << argv[2] << "'..." << std::endl;
+  image.write(argv[2]);
 
   // Erstelle eine Kopie von 'image',
   // wende 'threshold' Algorithmus darauf an

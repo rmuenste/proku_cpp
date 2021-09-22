@@ -10,3 +10,6 @@ bilder: aufgabe-9
 	./aufgabe-9 bilder/minerva.jpg minerva1.jpg minerva2.jpg
 	./aufgabe-9 bilder/bahn.jpg bahn1.jpg bahn2.jpg
 	./aufgabe-9 bilder/royo.jpg royo1.jpg royo2.jpg
+
+test: aufgabe-9
+	./aufgabe-9 bilder/minerva.jpg minerva1.jpg minerva2.jpg
