@@ -93,6 +93,75 @@ public:
   {
   }
 
+  int size() {
+
+    int size = 0;
+    for (IntListElement* elem = head; elem != nullptr; elem = elem->next) {
+      size++;
+    }
+
+    std::cout << "Size = " << size << std::endl;
+    return size;
+    
+  }
+
+  void find(int d) {
+
+    int count = 0;
+    for (IntListElement* elem = head; elem != nullptr; elem = elem->next) {
+      if (elem->value > d)
+        break;
+
+      if (elem->value == d)
+        count++;
+    }
+
+    std::cout << "Element " << d << " wurde " << count << " mal gefunden." << std::endl;
+    
+  }
+
+  void insert(int d) {
+
+
+//    IntListElement* elem = head;
+//    IntListElement* prev = nullptr;
+//
+//    while (elem != nullptr) {
+//
+//      if (elem->value >= d)
+//        break;
+//
+//      prev = elem;
+//      elem = elem->next;
+//    }
+//
+//    if (elem == head) {
+//      head = new IntListElement(d, head);
+//    }
+//    else {
+//      prev->next = new IntListElement(d, elem);
+//    }
+
+    if (head == nullptr) {
+      head = new IntListElement(d, nullptr);
+      return;
+    }
+
+    if (head->value >= d) {
+      head = new IntListElement(d, head);
+      return;
+    }
+
+    IntListElement* elem = head;
+    while (elem->next != nullptr && elem->next->value <= d) {
+      elem = elem->next;
+    }
+
+    IntListElement* a = new IntListElement(d, elem->next);
+    elem->next = a;
+    
+  }
+
   // Druckt die Liste auf die Konsole
   void print() const
   {
@@ -247,6 +316,26 @@ int main()
       break;
 
     // TODO: weitere Befehle einfuegen
+    case 'S':
+    case 's':
+      // Liste testen
+      list.size();
+      break;
+    case 'F':
+    case 'f':
+      // Liste testen
+      int datum;
+      if(read_int(datum))
+        list.find(datum);
+      break;
+
+    case 'I':
+    case 'i':
+      // Liste testen
+      int val;
+      if(read_int(val))
+        list.insert(val);
+      break;
 
     default:
       std::cout << "FEHLER: unbekannter Befehl '" << command << "'" << std::endl;

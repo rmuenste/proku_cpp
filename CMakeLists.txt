@@ -27,6 +27,9 @@ file(GLOB EX4_SRC aufgabe4/*.cpp)
 file(GLOB EX6_INC aufgabe6/*.hpp)
 file(GLOB EX6_SRC aufgabe6/*.cpp)
 
+file(GLOB EX8_INC aufgabe8/*.hpp)
+file(GLOB EX8_SRC aufgabe8/*.cpp)
+
 file(GLOB EX_INC *.hpp)
     
 set(EX_INCLUDE_DIR 
@@ -86,3 +89,5 @@ add_executable(ex6 ${EX_INC} ${EX6_INC} ${EX6_SRC})
 target_include_directories(ex6 PUBLIC ${EX_INCLUDE_DIR} ${JPEG_LIBRARY_INCLUDE_DIR})
 target_link_libraries(ex6 ${JPEG_LIBRARY_LIBS})
 
+add_executable(ex8 ${EX_INC} aufgabe8/aufgabe8.cpp)
+target_include_directories(ex8 PUBLIC ${EX_INCLUDE_DIR})
