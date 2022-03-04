@@ -30,6 +30,9 @@ file(GLOB EX6_SRC aufgabe6/*.cpp)
 file(GLOB EX8_INC aufgabe8/*.hpp)
 file(GLOB EX8_SRC aufgabe8/*.cpp)
 
+file(GLOB EX9_INC aufgabe9/*.hpp)
+file(GLOB EX9_SRC aufgabe9/*.cpp)
+
 file(GLOB EX10_INC aufgabe10/*.hpp)
 file(GLOB EX10_SRC aufgabe10/*.cpp)
 
@@ -94,6 +97,9 @@ target_link_libraries(ex6 ${JPEG_LIBRARY_LIBS})
 
 add_executable(ex8 ${EX_INC} aufgabe8/aufgabe8.cpp)
 target_include_directories(ex8 PUBLIC ${EX_INCLUDE_DIR})
+
+add_executable(ex9 ${EX_INC} aufgabe9/aufgabe9.cpp)
+target_include_directories(ex9 PUBLIC ${EX_INCLUDE_DIR})
 
 add_executable(ex10 ${EX_INC} aufgabe10/aufgabe10.cpp)
 target_include_directories(ex10 PUBLIC ${EX_INCLUDE_DIR})
