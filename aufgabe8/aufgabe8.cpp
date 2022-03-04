@@ -93,6 +93,10 @@ public:
   {
   }
 
+  ~IntList() {
+    clear();
+  }
+
   int size() {
 
     int size = 0;
@@ -117,6 +121,60 @@ public:
     }
 
     std::cout << "Element " << d << " wurde " << count << " mal gefunden." << std::endl;
+    
+  }
+
+  void erase(int d) {
+
+   // Element suchen
+
+   // Element sooft loeschen, wie es vorkommt 
+
+   // Teillisten verbinden
+
+   IntListElement *ptr = head;
+   IntListElement *prev = nullptr;
+
+   int count = 0;
+   while (ptr != nullptr) {
+
+     if (ptr == head && head->value == d) {
+       IntListElement* ptr_next = ptr->next;
+       delete head;
+       head = ptr_next;
+       ptr = head;
+       count++;
+       continue;
+     }
+
+     if (ptr->value == d) {
+       IntListElement* ptr_next = ptr->next;
+       delete ptr;
+       ptr = ptr_next;
+       prev->next = ptr_next;
+       count++;
+     }
+     else {
+       prev = ptr;
+       ptr = ptr->next;
+     }
+
+   }
+
+  }
+
+  void clear() {
+
+    IntListElement* elem = head;
+
+    while (elem != nullptr) {
+
+      IntListElement* nxt = elem->next;
+      delete elem;
+      elem = nxt;
+    }
+
+    head = nullptr;
     
   }
 
@@ -271,13 +329,13 @@ int main()
   // Wichtig:
   // Loeschen Sie diesen Test-Code, wenn Sie bei Teilaufgabe d) ankommen!
   // Erstelle 5 Elemente auf dem Stack und verkette sie von Hand:
-  IntListElement elem_0(7, nullptr);
-  IntListElement elem_1(5, &elem_0);
-  IntListElement elem_2(5, &elem_1);
-  IntListElement elem_3(3, &elem_2);
-  IntListElement elem_4(2, &elem_3);
-  // Haenge die Elemente in die Liste ein:
-  list.head = &elem_4;
+//  IntListElement elem_0(7, nullptr);
+//  IntListElement elem_1(5, &elem_0);
+//  IntListElement elem_2(5, &elem_1);
+//  IntListElement elem_3(3, &elem_2);
+//  IntListElement elem_4(2, &elem_3);
+//  // Haenge die Elemente in die Liste ein:
+//  list.head = &elem_4;
   // <<<<<<<<<< TESTWEISE <<<<<<<<<<
 
   // Endlos-Eingabe-Schleife:
@@ -335,6 +393,21 @@ int main()
       int val;
       if(read_int(val))
         list.insert(val);
+      break;
+   case 'C':
+   case 'c':
+      // Teilaufgabe f)
+      // Liste leeren
+      list.clear();
+      list.print();
+      break;
+   case 'E':
+   case 'e':
+      // Liste testen
+      int val2;
+      if(read_int(val2))
+        list.erase(val2);
+      list.print();
       break;
 
     default:
